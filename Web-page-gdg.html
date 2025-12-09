@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Techmakers Info Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #ea4335;
+            --accent-color: #34a853;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            --card-shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid transparent;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .card:nth-child(1) {
+            border-top-color: var(--primary-color);
+        }
+
+        .card:nth-child(2) {
+            border-top-color: var(--accent-color);
+        }
+
+        .card:nth-child(3) {
+            border-top-color: var(--secondary-color);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .card:nth-child(1) .card-icon {
+            background-color: var(--primary-color);
+        }
+
+        .card:nth-child(2) .card-icon {
+            background-color: var(--accent-color);
+        }
+
+        .card:nth-child(3) .card-icon {
+            background-color: var(--secondary-color);
+        }
+
+        .card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .card-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .card-content {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        .card-content ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+
+        .card-content li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .card-content li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .card:nth-child(3) .card-content li:before {
+            content: "◆";
+            color: var(--secondary-color);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #ddd;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .card {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .card-title {
+                font-size: 1.5rem;
+            }
+            
+            .card-content {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Women Techmakers</h1>
+            <p class="subtitle">A community by Google aimed at empowering women in technology through resources, events, and networking opportunities.</p>
+        </header>
+        
+        <main>
+            <div class="cards-container">
+                <!-- Card 1: What is WTM? -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h2 class="card-title">What is WTM?</h2>
+                    <div class="card-content">
+                        <p>Women Techmakers is Google's global program that provides visibility, community, and resources for women in technology. It aims to create a world where all women can thrive in tech through workshops, networking events, and leadership opportunities.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Why join a tech community? -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h2 class="card-title">Why join a tech community?</h2>
+                    <div class="card-content">
+                        <p>Joining a tech community like WTM offers numerous benefits:</p>
+                        <ul>
+                            <li><strong>Mentorship:</strong> Guidance from experienced professionals</li>
+                            <li><strong>Collaborative Projects:</strong> Hands-on experience working with others</li>
+                            <li><strong>Confidence Building:</strong> Speaking and leadership opportunities</li>
+                            <li><strong>Networking:</strong> Connect with like-minded individuals</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Card 3: My Tech Interests -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h2 class="card-title">My Tech Interests</h2>
+                    <div class="card-content">
+                        <p>Areas I'm passionate about and excited to explore further:</p>
+                        <ul>
+                            <li><strong>Web Development:</strong> Creating responsive, accessible websites</li>
+                            <li><strong>Machine Learning:</strong> Building intelligent systems and models</li>
+                            <li><strong>UI/UX Design:</strong> Crafting intuitive user experiences</li>
+                            <li><strong>Cloud Computing:</strong> Leveraging cloud services for scalable solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>Created with ❤️ for the Women Techmakers Community</p>
+            <p>This page is fully responsive and uses only HTML & CSS</p>
+            <p>Host it on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> or <a href="https://www.netlify.com/" target="_blank">Netlify</a></p>
+        </footer>
+    </div>
+</body>
+</html>
